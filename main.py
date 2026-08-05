@@ -33,9 +33,15 @@ def load_sp500_tickers():
         with open(csv_path, mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                ticker = row.get("ticker", "").strip()
-                company_name = row.get("company_name", "").strip()
-                if ticker:
+                if not row:
+                    continue
+                ticker_val = row.get("ticker")
+                company_val = row.get("company_name")
+                
+                ticker = str(ticker_val).strip() if ticker_val else ""
+                company_name = str(company_val).strip() if company_val else ""
+                
+                if ticker and ticker.lower() != "nan":
                     tickers_list.append({"ticker": ticker, "company_name": company_name})
                     
         logger.info(f"Se cargaron {len(tickers_list)} empresas para análisis.")
@@ -125,4 +131,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-          
+            
