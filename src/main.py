@@ -9,7 +9,7 @@ import json
 import logging
 from datetime import datetime
 
-from config import (
+from src.config import (
     SP500_LIST_FILE,
     CONFIDENCE_THRESHOLD,
     MAX_ALERTS_PER_RUN,
