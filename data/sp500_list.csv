@@ -1,0 +1,154 @@
+ticker,company_name,sector
+AAPL,Apple Inc,Technology
+MSFT,Microsoft Corporation,Technology
+GOOGL,Alphabet Inc,Technology
+AMZN,Amazon.com Inc,Consumer Discretionary
+NVDA,NVIDIA Corporation,Technology
+META,Meta Platforms Inc,Technology
+TSLA,Tesla Inc,Consumer Discretionary
+BRK.B,Berkshire Hathaway Inc,Financials
+JNJ,Johnson & Johnson,Healthcare
+V,Visa Inc,Financials
+WMT,Walmart Inc,Consumer Staples
+JPM,JPMorgan Chase Co,Financials
+PG,Procter & Gamble Co,Consumer Staples
+MA,Mastercard Incorporated,Financials
+HD,The Home Depot Inc,Consumer Discretionary
+DIS,The Walt Disney Company,Communication Services
+MRK,Merck & Co Inc,Healthcare
+NFLX,Netflix Inc,Communication Services
+COST,Costco Wholesale Corporation,Consumer Staples
+KO,The Coca-Cola Company,Consumer Staples
+PEP,PepsiCo Inc,Consumer Staples
+LLY,Eli Lilly and Company,Healthcare
+IBM,International Business Machines,Technology
+ABBV,AbbVie Inc,Healthcare
+BAC,Bank of America Corporation,Financials
+CSCO,Cisco Systems Inc,Technology
+XOM,Exxon Mobil Corporation,Energy
+TMO,Thermo Fisher Scientific Inc,Healthcare
+MU,Micron Technology Inc,Technology
+AXP,American Express Company,Financials
+ABT,Abbott Laboratories,Healthcare
+WBA,Walgreens Boots Alliance Inc,Healthcare
+ACN,Accenture plc,Technology
+AMD,Advanced Micro Devices Inc,Technology
+AMGN,Amgen Inc,Healthcare
+ADBE,Adobe Inc,Technology
+CAT,Caterpillar Inc,Industrials
+CMCSA,Comcast Corporation,Communication Services
+CVX,Chevron Corporation,Energy
+PYPL,PayPal Holdings Inc,Financials
+GE,General Electric Company,Industrials
+GILD,Gilead Sciences Inc,Healthcare
+HON,Honeywell International Inc,Industrials
+INTC,Intel Corporation,Technology
+ISRG,Intuitive Surgical Inc,Healthcare
+INTU,Intuit Inc,Software
+CCI,Crown Castle Inc,Real Estate
+CME,CME Group Inc,Financials
+CL,Colgate-Palmolive Company,Consumer Staples
+ORCL,Oracle Corporation,Software
+QCOM,QUALCOMM Incorporated,Technology
+TJX,The TJX Companies Inc,Consumer Discretionary
+TXN,Texas Instruments Incorporated,Technology
+VRTX,Vertex Pharmaceuticals Incorporated,Healthcare
+VRSN,VeriSign Inc,Technology
+VZ,Verizon Communications Inc,Communication Services
+WM,Waste Management Inc,Industrials
+T,AT&T Inc,Communication Services
+SHW,The Sherwin-Williams Company,Materials
+SPLK,Splunk Inc,Software
+SPGI,S&P Global Inc,Financials
+SBAC,SBA Communications Inc,Real Estate
+SCHW,Charles Schwab Corporation,Financials
+SLB,Schlumberger NV,Energy
+SO,Southern Company,Utilities
+LMT,Lockheed Martin Corporation,Industrials
+LOW,Lowe's Companies Inc,Consumer Discretionary
+LYV,Live Nation Entertainment Inc,Communication Services
+LRCX,Lam Research Corporation,Technology
+LHX,L3Harris Technologies Inc,Industrials
+KEYS,Keysight Technologies Inc,Technology
+KLAC,KLA Corporation,Technology
+KMX,CarMax Inc,Consumer Discretionary
+KMI,Kinder Morgan Inc,Energy
+K,Kellanova,Consumer Staples
+KHC,Kraft Heinz Company,Consumer Staples
+ILMN,Illumina Inc,Healthcare
+INCY,Incyte Corporation,Healthcare
+INFO,IHS Markit Ltd,Industrials
+IDXX,IDEXX Laboratories Inc,Healthcare
+IQV,IQVIA Holdings Inc,Healthcare
+IRM,Iron Mountain Incorporated,Real Estate
+HSY,The Hershey Company,Consumer Staples
+HUM,Humana Inc,Healthcare
+HUBB,Hubbell Incorporated,Industrials
+HES,Hess Corporation,Energy
+HLT,Hilton Worldwide Holdings Inc,Consumer Discretionary
+HWM,Howmet Aerospace Inc,Industrials
+HALO,Halozyme Therapeutics Inc,Healthcare
+HAL,Halliburton Company,Energy
+HCA,HCA Healthcare Inc,Healthcare
+PEAK,HighPeak Energy Inc,Energy
+HII,Huntington Ingalls Industries Inc,Industrials
+GEHC,GE HealthCare Technologies Inc,Healthcare
+GIS,General Mills Inc,Consumer Staples
+GM,General Motors Company,Consumer Discretionary
+GPC,Genuine Parts Company,Distributors
+GRMN,Garmin Ltd,Consumer Discretionary
+GOOG,Alphabet Inc,Technology
+GDDY,GoDaddy Inc,Technology
+GS,Goldman Sachs Group Inc,Financials
+GT,Goodyear Tire & Rubber Company,Consumer Discretionary
+GTES,Gitanes Inc,Energy
+F,Ford Motor Company,Consumer Discretionary
+FCX,Freeport-McMoRan Inc,Materials
+FDX,FedEx Corporation,Industrials
+FIS,Fiserv Inc,Technology
+FIT,Fitbit Inc,Consumer Discretionary
+FITB,Fifth Third Bancorp,Financials
+FLR,Fluor Corporation,Industrials
+FMC,FMC Corporation,Materials
+FOX,Fox Corporation,Communication Services
+FOXA,Fox Corporation,Communication Services
+FRT,Federal Realty Investment Trust,Real Estate
+FSLR,First Solar Inc,Technology
+FTV,Fortive Corporation,Industrials
+FTNT,Fortinet Inc,Technology
+FUL,H.B. Fuller Company,Materials
+GD,General Dynamics Corporation,Industrials
+GDOT,GigCapital2 Inc,Blank Checks
+GEL,Gelesis Holdings Inc,Healthcare
+GEN,Gen Digital Inc,Technology
+GEVO,Gevo Inc,Energy
+GLPI,Gaming and Leisure Properties Inc,Real Estate
+GLW,Corning Incorporated,Technology
+GM,General Motors Company,Consumer Discretionary
+GMAB,Genmab A/S,Healthcare
+GNRC,Generac Holdings Inc,Industrials
+GNW,Genworth Financial Inc,Financials
+GOLD,Barrick Gold Corporation,Materials
+GPC,Genuine Parts Company,Distributors
+GPS,Gap Inc,Consumer Discretionary
+GRMN,Garmin Ltd,Consumer Discretionary
+GRT,Gritstone Bio Inc,Healthcare
+GRWG,Growblox Sciences Inc,Technology
+GS,Goldman Sachs Group Inc,Financials
+GT,Goodyear Tire & Rubber Company,Consumer Discretionary
+GTLB,Gartner Inc,Technology
+GTWK,Getweek Inc,Technology
+GUV,GU Investment Company Inc,Blank Checks
+GVA,Granite Construction Incorporated,Industrials
+GWRE,Guidewire Software Inc,Software
+GWX,Gulf Island Fabrication Inc,Energy
+GXO,GXO Logistics Inc,Industrials
+GYEN,iShares Currency Hedged MSCI Japan ETF,Industrials
+HAE,Haemonetics Corporation,Healthcare
+HALL,Hallmark Financial Services Inc,Financials
+HALO,Halozyme Therapeutics Inc,Healthcare
+HAS,Hasbro Inc,Consumer Discretionary
+HAYW,Hayward Holdings Inc,Industrials
+HCA,HCA Healthcare Inc,Healthcare
+HCAT,Healthcare Services Group Inc,Healthcare
+H
