@@ -1,15 +1,17 @@
 # =====================================
 # MAIN - SCRIPT PRINCIPAL DEL BOT S&P 500
 # =====================================
-# Orquesta la ejecución completa: carga empresas, analiza y envía alertas.
-
 import os
 import csv
 import json
 import logging
 from datetime import datetime
 
-from src.config import (
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from config import (
     SP500_LIST_FILE,
     CONFIDENCE_THRESHOLD,
     MAX_ALERTS_PER_RUN,
@@ -26,16 +28,20 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def load_sp500_tickers():
-    """
-    Carga la lista de empresas desde el archivo CSV.
-    """
     tickers_list = []
     try:
-        if not os.path.exists(SP500_LIST_FILE):
-            logger.error(f"No se encontró el archivo de empresas en {SP500_LIST_FILE}")
+        # Buscar el archivo CSV tanto en la ruta local como desde la raíz
+        csv_path = SP500_LIST_FILE
+        if not os.path.exists(csv_path):
+            csv_path = "../data/sp500_list.csv"
+        if not os.path.exists(csv_path):
+            csv_path = "data/sp500_list.csv"
+
+        if not os.path.exists(csv_path):
+            logger.error(f"No se encontró el archivo de empresas en ninguna ruta.")
             return []
 
-        with open(SP500_LIST_FILE, mode='r', encoding='utf-8') as file:
+        with open(csv_path, mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 ticker = row.get("ticker", "").strip()
@@ -50,12 +56,8 @@ def load_sp500_tickers():
         return []
 
 def main():
-    """
-    Función principal de ejecución del bot.
-    """
     logger.info("=== INICIANDO ANÁLISIS DE MERCADO S&P 500 ===")
     
-    # Obtener Chat ID de Telegram (si está configurado en entorno o usar variable genérica)
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
     
     fetcher = DataFetcher()
@@ -68,7 +70,6 @@ def main():
 
     opportunities = []
 
-    # Analizar empresa por empresa (o un subconjunto si es muy largo, aquí recorre todas)
     for item in tickers:
         ticker = item["ticker"]
         company_name = item["company_name"]
@@ -76,7 +77,6 @@ def main():
         logger.info(f"Analizando {ticker} - {company_name}...")
 
         try:
-            # 1. Datos históricos técnicos
             df_history = fetcher.get_stock_data(ticker, period="60d")
             if df_history is None or len(df_history) < 50:
                 continue
@@ -86,22 +86,18 @@ def main():
             if not tech_result:
                 continue
 
-            # 2. Datos fundamentales
             fund_data = fetcher.get_fundamental_data(ticker)
             analyst_ratings = fetcher.get_analyst_ratings(ticker)
             
             fund_analyzer = FundamentalAnalyzer(fund_data, analyst_ratings)
             fund_result = fund_analyzer.evaluate_fundamentals()
 
-            # 3. Noticias y macro
             news_articles = fetcher.get_recent_news(ticker, days=7)
             macro_analyzer = MacroAnalyzer(news_articles)
             macro_result = macro_analyzer.evaluate_macro_and_news()
 
-            # 4. Liquidez
             liquidity_score = fetcher.check_liquidity(ticker)
 
-            # 5. Scoring final (0-100)
             scoring_engine = ScoringEngine(tech_result, fund_result, macro_result, liquidity_score)
             score_data = scoring_engine.calculate_final_score()
 
@@ -120,15 +116,11 @@ def main():
             logger.error(f"Error procesando el ticker {ticker}: {str(e)}")
             continue
 
-    # Ordenar oportunidades por puntaje de mayor a menor
     opportunities.sort(key=lambda x: x["score_data"]["final_score"], reverse=True)
-
-    # Seleccionar el top configurado (máximo 5)
     top_opportunities = opportunities[:MAX_ALERTS_PER_RUN]
 
     logger.info(f"Se encontraron {len(top_opportunities)} oportunidades que superan el umbral {CONFIDENCE_THRESHOLD}.")
 
-    # Enviar alertas por Telegram
     if top_opportunities and chat_id:
         for opp in top_opportunities:
             sender.send_alert_message(
@@ -146,4 +138,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-      
+    
+    
