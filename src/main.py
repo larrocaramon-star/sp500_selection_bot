@@ -17,12 +17,12 @@ from config import (
     MAX_ALERTS_PER_RUN,
     TELEGRAM_BOT_TOKEN
 )
-from data_fetcher import DataFetcher
-from technical_analysis import TechnicalAnalyzer
-from fundamental_analysis import FundamentalAnalyzer
-from macro_analysis import MacroAnalyzer
-from scoring import ScoringEngine
-from telegram_sender import TelegramSender
+from .data_fetcher import DataFetcher
+from .technical_analysis import TechnicalAnalyzer
+from .fundamental_analysis import FundamentalAnalyzer
+from .macro_analysis import MacroAnalyzer
+from .scoring import ScoringEngine
+from .telegram_sender import TelegramSender
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
